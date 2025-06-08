@@ -1,0 +1,79 @@
+/* Reset & base */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f0f4ff, #c6d9ff);
+  color: #333;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Letter container */
+.letter-container {
+  background: white;
+  padding: 30px 40px;
+  border-radius: 15px;
+  max-width: 650px;
+  margin: 60px auto;
+  box-shadow:
+    0 10px 20px rgba(0,0,0,0.1),
+    0 6px 6px rgba(0,0,0,0.05);
+  cursor: grab;
+  user-select: none;
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  position: relative;
+}
+
+/* Hover effect */
+.letter-container:hover {
+  box-shadow:
+    0 15px 30px rgba(0,0,0,0.2),
+    0 10px 10px rgba(0,0,0,0.1);
+  transform: translateY(-10px) scale(1.02);
+}
+
+/* Fade-in + slide up animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Heading style */
+h1 {
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #1a3d8f;
+  text-shadow: 0 1px 2px rgba(26, 61, 143, 0.3);
+}
+
+/* Paragraph style */
+p {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  white-space: pre-wrap;
+  color: #444;
+}
+
+/* Scroll effect (optional) */
+@media (hover: none) {
+  /* Disable hover on touch devices */
+  .letter-container:hover {
+    box-shadow:
+      0 10px 20px rgba(0,0,0,0.1),
+      0 6px 6px rgba(0,0,0,0.05);
+    transform: none;
+  }
+}
